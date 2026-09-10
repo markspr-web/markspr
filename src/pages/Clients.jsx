@@ -45,7 +45,7 @@ export default function Clients() {
           <ClientGrid clients={clients} />
 
           <p className="mt-12 max-w-xl text-sm leading-relaxed text-slate">
-            {clients.length} names drawn from Marks Media Communication’s public client list
+            {clients.length} brands and institutions Marks Media Communication has worked with
             {clientLogoCount === 0
               ? '. Official brand logos will be added by the client.'
               : `, ${clientLogoCount} shown as official brand logos.`}{' '}

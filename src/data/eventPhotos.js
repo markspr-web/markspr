@@ -1,7 +1,7 @@
 // Auto-discovers event photos dropped into src/assets/events/.
 //
 // Drop a file named after the event's `slug` (see `events` in site.js), e.g.
-//   src/assets/events/lic-press-meet.jpg
+//   src/assets/events/bizav-india-awards-hyderabad.jpg
 // and it is picked up automatically — no code changes needed. When no file
 // matches an event, the Events list and detail page fall back to a text-only
 // placeholder.

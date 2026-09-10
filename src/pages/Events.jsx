@@ -44,7 +44,7 @@ export default function Events() {
         label="Events"
         breadcrumbs={crumbs}
         titleLines={['Selected', { text: 'work', accent: true }]}
-        intro="Press meets, product launches, unveilings, award ceremonies and celebrity appearances managed by Marks Media Communication."
+        intro="Product launches, exhibitions, celebrity appearances, award ceremonies and brand-ambassador announcements managed by Marks Media Communication."
       />
 
       <section className="bg-white">

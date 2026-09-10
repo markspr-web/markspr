@@ -151,6 +151,15 @@ export const services = [
       'Whether you need a celebrity for a product launch or a brand ambassador for your brand, we arrange talent for product launches, shows, inaugurations, events, collection launches and brand ambassador roles.',
     ],
   },
+  {
+    slug: 'influencer-marketing',
+    title: 'Influencer Marketing',
+    summary: 'Matching brands with the right voices to reach audiences where they already are.',
+    body: [
+      'Audiences increasingly place their trust in people rather than in advertisements. Influencer marketing puts a brand in front of an engaged following through a voice that community already listens to.',
+      'Marks Media Communication identifies creators whose audience, tone and values align with the brand, then plans and manages the collaboration from end to end — briefing, content direction, scheduling, disclosure and review — and tracks the response so each campaign informs the next.',
+    ],
+  },
 ]
 
 // Shown on the Services page as a closing statement (no detail route on the
@@ -225,10 +234,39 @@ export const publicRelations = {
   ],
 }
 
-// Event names are taken verbatim from markspr.com/events (spellings of public
-// figures corrected). No dates are shown because the original site does not
-// publish them. The tag is derived from the event name itself.
+// Earlier events came from markspr.com/events (spellings of public figures
+// corrected); newer entries are supplied by the client. Newest first. No dates
+// are shown yet. `tag` is the category shown on the card and drives the filter
+// chips on /events. `related` links to a service slug.
 export const events = [
+  {
+    slug: 'femina-miss-india-telangana-2027-launch',
+    title: 'Femina Miss India Telangana 2027 launched at The Westin, Hyderabad',
+    seoTitle: 'Femina Miss India Telangana 2027 launch',
+    tag: 'Event Management',
+    related: 'event-management',
+  },
+  {
+    slug: 'mg-hector-tomahawk-unveiling',
+    title: 'MG Hector Tomahawk unveiled at Vibrant MG, Secunderabad',
+    seoTitle: 'MG Hector Tomahawk unveiling',
+    tag: 'Product Launch',
+    related: 'product-launch',
+  },
+  {
+    slug: 'keychron-vishal-peripherals-launch',
+    title: 'Keychron launched in Hyderabad at Vishal Peripherals',
+    seoTitle: 'Keychron launch, Hyderabad',
+    tag: 'Product Launch',
+    related: 'product-launch',
+  },
+  {
+    slug: 'hilife-brides',
+    title: 'Hi-Life Brides — wedding & bridal shopping exhibition, Hyderabad',
+    seoTitle: 'Hi-Life Brides exhibition, Hyderabad',
+    tag: 'Event Management',
+    related: 'event-management',
+  },
   {
     slug: 'actress-taapsee-launch',
     title: 'Actress Taapsee at a Launch',
@@ -236,32 +274,10 @@ export const events = [
     related: 'celebrity-management',
   },
   {
-    slug: 'world-rose-day-celebrations',
-    title: 'World Rose Day Celebrations',
-    tag: 'Public Relations',
-    related: 'event-management',
-  },
-  { slug: 'hi-life-launch', title: 'Hi-Life Launch', tag: 'Launch', related: 'product-launch' },
-  {
     slug: 'angela-krislinzki-samsung-event',
     title: 'Actress Angela Krislinzki at a Samsung Event',
     tag: 'Celebrity Event',
     related: 'celebrity-management',
-  },
-  {
-    slug: 'lic-press-meet',
-    title: 'Press Meet by LIC',
-    tag: 'Press Meet',
-    related: 'media-relations',
-  },
-  { slug: 'start-up', title: 'Start-Up', tag: 'Public Relations', related: 'corporate-pr' },
-  {
-    slug: 'jayant-sinha-bizav-india-awards-bangalore',
-    title:
-      'Shri Jayant Sinha, Minister of State for Civil Aviation, at BizAV India Awards, Bangalore',
-    seoTitle: 'Jayant Sinha at BizAV India Awards, Bangalore',
-    tag: 'Awards',
-    related: 'event-management',
   },
   {
     slug: 'rana-daggubati-unveiling',
@@ -282,24 +298,6 @@ export const events = [
     related: 'celebrity-management',
   },
   {
-    slug: 'iphex-pharmexcil-press-meet',
-    title: 'Press Meet for IPHEX by Pharmexcil — KTR unveils',
-    tag: 'Press Meet',
-    related: 'media-relations',
-  },
-  {
-    slug: 'pharmexcil-bdma-press-meet',
-    title: 'Press Meet by Pharmexcil & BDMA',
-    tag: 'Press Meet',
-    related: 'media-relations',
-  },
-  {
-    slug: 'e-health-card-amala-akkineni',
-    title: 'e-Health Card unveiled by Amala Akkineni',
-    tag: 'Unveiling',
-    related: 'product-launch',
-  },
-  {
     slug: 'bizav-india-awards-hyderabad',
     title: 'BizAV India Awards, Hyderabad',
     tag: 'Awards',
@@ -317,57 +315,34 @@ export const events = [
     tag: 'Event Management',
     related: 'event-management',
   },
-  {
-    slug: 'justice-kurian-joseph-environment-management',
-    title: 'Justice Kurian Joseph at the World Congress on Environment Management',
-    tag: 'Public Relations',
-    related: 'media-relations',
-  },
-  {
-    slug: 'rashmi-shetty-book-launch',
-    title: 'Dr. Rashmi Shetty’s book unveiled by Actor Nagarjuna and Actor Rana Daggubati',
-    seoTitle: 'Dr. Rashmi Shetty book launch',
-    tag: 'Book Launch',
-    related: 'product-launch',
-  },
 ]
 
-// Client names taken from markspr.com/clients. Order preserved from the source.
+// Client list supplied by Marks Media Communication. Order preserved as given.
 // `slug` is the filename stem for an optional official logo dropped into
-// src/assets/clients/ (e.g. dabur.svg). When no logo file exists the name is
+// src/assets/clients/ (e.g. bajaj.png). When no logo file exists the name is
 // shown as text — see src/components/ClientGrid.jsx and
 // src/assets/clients/README.md.
 export const clients = [
-  { name: 'Coupon', slug: 'coupon' },
-  { name: 'Hytex', slug: 'hytex' },
-  { name: 'Dabur', slug: 'dabur' },
-  { name: 'Neerus', slug: 'neerus' },
+  { name: 'Hilife', slug: 'hilife' },
+  { name: 'Bajaj', slug: 'bajaj' },
   { name: 'Manepally', slug: 'manepally' },
-  { name: 'Sunshine Hospitals', slug: 'sunshine-hospitals' },
-  { name: 'Mebaz', slug: 'mebaz' },
-  { name: 'Bajaj Electronics', slug: 'bajaj-electronics' },
-  { name: 'BKT', slug: 'bkt' },
-  { name: 'Ceramic Pro', slug: 'ceramic-pro' },
-  { name: 'Creamstone', slug: 'creamstone' },
-  { name: 'Desire Hyderabad', slug: 'desire-hyderabad' },
-  { name: 'Forum Sujana Mall', slug: 'forum-sujana-mall' },
-  { name: 'Glam Fashion Week', slug: 'glam-fashion-week' },
-  { name: 'GNI', slug: 'gni' },
-  { name: 'Hi-Life Exhibition', slug: 'hi-life-exhibition' },
-  { name: 'Hiya Jewellers', slug: 'hiya-jewellers' },
-  { name: 'Hollywood Footwear', slug: 'hollywood-footwear' },
-  { name: 'IIOO', slug: 'iioo' },
-  { name: 'India Med Expo', slug: 'india-med-expo' },
-  { name: 'Jahapanah', slug: 'jahapanah' },
-  { name: 'Jaipur Jewels', slug: 'jaipur-jewels' },
-  { name: 'Kaira', slug: 'kaira' },
-  { name: 'Kalamandir Foundation', slug: 'kalamandir-foundation' },
-  { name: 'Kalasha', slug: 'kalasha' },
-  { name: 'KSR', slug: 'ksr' },
-  { name: 'KWC', slug: 'kwc' },
-  { name: 'Manepally Jewellers', slug: 'manepally-jewellers' },
-  { name: 'Pharmexcil', slug: 'pharmexcil' },
-  { name: 'PMJ', slug: 'pmj' },
+  { name: 'Neeru’s', slug: 'neerus' },
+  { name: 'MG', slug: 'mg' },
+  { name: 'Nissan', slug: 'nissan' },
+  { name: 'Vibrant', slug: 'vibrant' },
+  { name: 'Nexus Mall', slug: 'nexus-mall' },
+  { name: 'Cream Stone', slug: 'cream-stone' },
+  { name: 'Karachi Bakery', slug: 'karachi-bakery' },
+  { name: 'Guru Nanak', slug: 'guru-nanak' },
+  { name: 'Asia Jewel Show', slug: 'asia-jewel-show' },
+  { name: 'Narsingh', slug: 'narsingh' },
+  { name: 'Vishal Peripherals', slug: 'vishal-peripherals' },
+  { name: 'Femina Miss India', slug: 'femina-miss-india' },
+  { name: 'Miss World', slug: 'm' },
+  { name: 'Mandira', slug: 'mandira' },
+  { name: 'Petfolk', slug: 'petfolk' },
+  { name: 'gym', slug: 'gym' },
+  { name: 'hijs', slug: 'hijs' },
 ]
 
 export const network = {
@@ -431,9 +406,9 @@ export const seo = {
   services: {
     title: 'PR & Advertising Services | Marks Media Communication',
     description:
-      'Media relations, press releases, brand management, corporate PR, product launches, advertising, event management and celebrity management from a PR agency with more than 40 years of experience.',
+      'Media relations, press releases, brand management, corporate PR, product launches, advertising, event management, celebrity management and influencer marketing from a PR agency with more than 40 years of experience.',
     keywords:
-      'PR services, advertising services, media relations, press release, brand management, corporate PR, product launch, event management, celebrity management',
+      'PR services, advertising services, media relations, press release, brand management, corporate PR, product launch, event management, celebrity management, influencer marketing',
   },
   publicRelations: {
     title: 'Public Relations Agency | Media Relations & Crisis Management',
@@ -445,7 +420,7 @@ export const seo = {
   events: {
     title: 'Events & Media Events | Marks Media Communication',
     description:
-      'Press meets, product launches, unveilings, award ceremonies and celebrity appearances managed by Marks Media Communication, a public relations and advertising agency in Hyderabad.',
+      'Product launches, exhibitions, celebrity appearances, award ceremonies and brand-ambassador announcements managed by Marks Media Communication, a public relations and advertising agency in Hyderabad.',
     keywords:
       'event management agency, media events, press meet, product launch, celebrity appearances, award ceremonies Hyderabad',
   },

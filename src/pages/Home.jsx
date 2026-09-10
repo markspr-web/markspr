@@ -153,7 +153,8 @@ function ServicesList() {
         <Reveal delay={0.1} className="mt-8 max-w-xl text-base leading-relaxed text-slate">
           <p>
             Public Relations and Advertising under one roof — from media relations and press
-            releases to brand management, launches, events and celebrity management.
+            releases to brand management, launches, events, celebrity management and influencer
+            marketing.
           </p>
         </Reveal>
 
