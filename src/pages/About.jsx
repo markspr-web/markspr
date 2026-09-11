@@ -72,7 +72,7 @@ export default function About() {
               </Reveal>
               <Reveal delay={0.06} className="mt-10 border-t border-lightblue pt-6">
                 <div className="font-display text-4xl font-extrabold tracking-tightest text-navy">
-                  750+
+                  1000+
                 </div>
                 <p className="mt-3 text-sm uppercase tracking-[0.16em] text-slate">
                   Brands served in India, alongside international clients

@@ -59,14 +59,14 @@ export const about = {
   heading: ['We are', 'Marks Media', 'Communication'],
   stats: [
     { value: '40+', label: 'Years of experience' },
-    { value: '750+', label: 'Brands served in India' },
+    { value: '1000+', label: 'Brands served in India' },
     { value: 'Deccan', label: 'Region of India, based in Hyderabad' },
   ],
   lead:
     'Marks Media Communication is a media house that specialises in Public Relations and Advertising, based at Banjara Hills, Road No. 10, Hyderabad.',
   paragraphs: [
     'The agency is one of the oldest PR practices in South India, with experience cumulating over 40 years. Our work spans corporate reputation, public relations, celebrity management, image management, concept promotions, advertising, branding and crisis management.',
-    'We work through an extensive network that reaches beyond regional boundaries, serving a wide list of clients in India and internationally across the modern era of marketing and communication. Over 750 brands in India have been served, alongside international clients.',
+    'We work through an extensive network that reaches beyond regional boundaries, serving a wide list of clients in India and internationally across the modern era of marketing and communication. Over 1000 brands in India have been served, alongside international clients.',
     'Our approach is built on effective PR — creating and planning promotional ideas across communication channels to improve how a client is perceived and to strengthen its relationship with its target audience.',
     'Our strategies and campaigns are designed to build, enhance and magnify branding, corporate identity, celebrity management and image building — for both private and public institutions — through comprehensive research, precise planning and expert scrutiny of market demands.',
   ],
@@ -356,12 +356,12 @@ export const network = {
       text: 'One of the oldest PR practices in South India, with experience cumulating over 40 years.',
     },
     {
-      value: '750+',
+      value: '1000+',
       title: 'Brands served in India',
-      text: 'Over 750 brands served in India, alongside international clients across the modern marketing era.',
+      text: 'Over 1000 brands served in India, alongside international clients across the modern marketing era.',
     },
     {
-      value: '3',
+      value: '100000++++',
       title: 'Advertising media',
       text: 'Working relationships across print media, electronic media and outdoor media (hoardings).',
     },
