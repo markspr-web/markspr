@@ -19,6 +19,7 @@ export const company = {
     'https://www.youtube.com/c/MarksMediaCommunications',
     'https://www.instagram.com/marksmediacommunications',
     'https://www.linkedin.com/company/marks-media-communications/',
+    'https://x.com/markspr456',
   ],
 }
 
@@ -38,6 +39,11 @@ export const socialLinks = [
     platform: 'linkedin',
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/marks-media-communications/',
+  },
+  {
+    platform: 'x',
+    label: 'X',
+    href: 'https://x.com/markspr456',
   },
 ]
 
@@ -274,22 +280,10 @@ export const events = [
     related: 'celebrity-management',
   },
   {
-    slug: 'angela-krislinzki-samsung-event',
-    title: 'Actress Angela Krislinzki at a Samsung Event',
-    tag: 'Celebrity Event',
-    related: 'celebrity-management',
-  },
-  {
     slug: 'rana-daggubati-unveiling',
     title: 'Actor Rana Daggubati at an Unveiling',
     tag: 'Celebrity Event',
     related: 'celebrity-management',
-  },
-  {
-    slug: 'bishan-singh-bedi-media-event',
-    title: 'Cricketer Bishan Singh Bedi at a Media Event',
-    tag: 'Media Event',
-    related: 'media-relations',
   },
   {
     slug: 'pv-sindhu-vizag-steel-brand-ambassador',
@@ -298,22 +292,10 @@ export const events = [
     related: 'celebrity-management',
   },
   {
-    slug: 'bizav-india-awards-hyderabad',
-    title: 'BizAV India Awards, Hyderabad',
-    tag: 'Awards',
-    related: 'event-management',
-  },
-  {
     slug: 'tcei-best-pr-award',
     title: 'Best PR Award to Marks Media Communication by TCEI',
     tag: 'Recognition',
     related: 'public-relations',
-  },
-  {
-    slug: 'bajaj-electronics-lucky-draw',
-    title: 'Bajaj Electronics — Lucky Draw Events',
-    tag: 'Event Management',
-    related: 'event-management',
   },
 ]
 

@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import Seo from '../components/Seo'
 import Reveal, { RevealLine } from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
+import PhotoStrip from '../components/PhotoStrip'
 import { about, services, events, clients, network, company, seo, siteUrl } from '../data/site'
 import { clientLogo } from '../data/clientLogos'
 import { eventPhoto } from '../data/eventPhotos'
@@ -61,6 +62,25 @@ function Hero() {
             </Link>
           </Reveal>
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Impact photos                                                              */
+/* -------------------------------------------------------------------------- */
+
+function ImpactPhotos() {
+  return (
+    <section className="bg-white">
+      <div className="container-page py-16 lg:py-20">
+        <PhotoStrip
+          items={[
+            { slug: 'samsung-tv-launch', alt: 'Client product launch — from the record of Marks Media Communication' },
+            { slug: 'miss-world-jewellery', alt: 'Client event — from the record of Marks Media Communication' },
+          ]}
+        />
       </div>
     </section>
   )
@@ -378,6 +398,7 @@ export default function Home() {
         ]}
       />
       <Hero />
+      <ImpactPhotos />
       <AboutTeaser />
       <ServicesList />
       <PRBand />

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
+import PhotoStrip from '../components/PhotoStrip'
 import { network, seo } from '../data/site'
 
 const crumbs = [
@@ -62,6 +63,14 @@ export default function Network() {
 
       <section className="bg-white">
         <div className="container-page py-20 lg:py-28">
+          <PhotoStrip
+            className="mb-16 lg:mb-20"
+            items={[
+              { slug: 'bajaj-iphone17', alt: 'Product launch reach — from the record of Marks Media Communication' },
+              { slug: 'miss-world-jewellery', alt: 'International reach — from the record of Marks Media Communication' },
+            ]}
+          />
+
           <Reveal className="mb-4 flex items-center gap-3">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-red" aria-hidden="true" />
             <span className="eyebrow text-slate">Where the network reaches</span>

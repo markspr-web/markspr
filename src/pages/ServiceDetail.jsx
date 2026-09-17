@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
 import NotFound from './NotFound'
 import { services, siteUrl, company } from '../data/site'
+import { servicePhoto } from '../data/servicePhotos'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -14,6 +15,7 @@ export default function ServiceDetail() {
   const service = services[index]
   const prev = services[(index - 1 + services.length) % services.length]
   const next = services[(index + 1) % services.length]
+  const photo = servicePhoto(service.slug)
   const path = `/services/${service.slug}`
 
   const crumbs = [
@@ -37,6 +39,7 @@ export default function ServiceDetail() {
             name: service.title,
             serviceType: service.title,
             description: service.body.join(' '),
+            ...(photo ? { image: `${siteUrl}${photo}` } : {}),
             url: `${siteUrl}${path}`,
             provider: { '@id': `${siteUrl}/#organization` },
             areaServed: 'India',
@@ -62,6 +65,25 @@ export default function ServiceDetail() {
               </Reveal>
             </div>
             <div className="lg:col-span-9">
+              {photo && (
+                <Reveal className="mb-12">
+                  <figure className="group">
+                    <div className="flex w-full justify-center overflow-hidden border border-lightblue bg-offwhite">
+                      <img
+                        src={photo}
+                        alt={`${service.title} — work by ${company.name}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="max-h-[28rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:grayscale-0 motion-reduce:transition-none"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-xs uppercase tracking-[0.16em] text-slate">
+                      {service.title} · from {company.name}’s record
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              )}
+
               <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-slate">
                 {service.body.map((p, i) => (
                   <Reveal key={i} delay={i * 0.04}>

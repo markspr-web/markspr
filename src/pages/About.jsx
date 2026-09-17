@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
+import PhotoStrip from '../components/PhotoStrip'
 import { about, seo } from '../data/site'
 
 const crumbs = [
@@ -80,6 +81,18 @@ export default function About() {
               </Reveal>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Impact photos */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-page">
+          <PhotoStrip
+            items={[
+              { slug: 'jewellery-portrait', alt: 'Client work — from the record of Marks Media Communication' },
+              { slug: 'brand-ambassador-portrait', alt: 'Client launch — from the record of Marks Media Communication' },
+            ]}
+          />
         </div>
       </section>
 

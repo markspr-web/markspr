@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import ClientGrid from '../components/ClientGrid'
+import PhotoStrip from '../components/PhotoStrip'
 import { clients, seo } from '../data/site'
 import { clientLogoCount } from '../data/clientLogos'
 

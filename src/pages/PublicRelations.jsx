@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
+import PhotoStrip from '../components/PhotoStrip'
 import { publicRelations as pr, seo, siteUrl } from '../data/site'
 
 const crumbs = [
@@ -88,6 +89,18 @@ export default function PublicRelations() {
               </Reveal>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Impact photos */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-page">
+          <PhotoStrip
+            items={[
+              { slug: 'miss-world-press', alt: 'Press event — from the record of Marks Media Communication' },
+              { slug: 'bajaj-samsung-s23', alt: 'Product launch coverage — from the record of Marks Media Communication' },
+            ]}
+          />
         </div>
       </section>
 

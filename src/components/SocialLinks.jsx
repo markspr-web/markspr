@@ -1,7 +1,7 @@
-import { Youtube, Instagram, Linkedin } from 'lucide-react'
+import { Youtube, Instagram, Linkedin, X } from 'lucide-react'
 import { socialLinks } from '../data/site'
 
-const icons = { youtube: Youtube, instagram: Instagram, linkedin: Linkedin }
+const icons = { youtube: Youtube, instagram: Instagram, linkedin: Linkedin, x: X }
 
 /**
  * Row of social profile links. `tone` picks the colour treatment for the
