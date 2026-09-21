@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
+import VideoBand from '../components/VideoBand'
+import { videos } from '../data/videos'
 import Reveal, { RevealLine } from '../components/Reveal'
 import PhotoStrip from '../components/PhotoStrip'
 import { about, seo } from '../data/site'
@@ -192,6 +194,7 @@ export default function About() {
         </div>
       </section>
 
+      <VideoBand video={videos.about} />
     </>
   )
 }

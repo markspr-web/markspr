@@ -4,6 +4,8 @@ import { AnimatePresence, m } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
+import VideoBand from '../components/VideoBand'
+import { videos } from '../data/videos'
 import { events, seo, siteUrl } from '../data/site'
 import { eventPhoto } from '../data/eventPhotos'
 
@@ -136,6 +138,7 @@ export default function Events() {
         </div>
       </section>
 
+      <VideoBand video={videos.events} />
     </>
   )
 }

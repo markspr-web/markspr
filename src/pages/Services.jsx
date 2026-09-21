@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
+import VideoBand from '../components/VideoBand'
+import { videos } from '../data/videos'
 import Reveal from '../components/Reveal'
 import { services, anyEvent, seo, siteUrl } from '../data/site'
 
@@ -113,6 +115,7 @@ export default function Services() {
         </div>
       </section>
 
+      <VideoBand video={videos.services} />
     </>
   )
 }
