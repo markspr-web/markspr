@@ -43,6 +43,7 @@ export default function About() {
       />
 
       <PageHero
+        video
         label="About"
         dark
         breadcrumbs={crumbs}
@@ -90,9 +91,11 @@ export default function About() {
       <section className="bg-white py-20 lg:py-28">
         <div className="container-page">
           <PhotoStrip
+            aspect="aspect-[4/5]"
             items={[
               { slug: 'jewellery-portrait', alt: 'Client work — from the record of Marks Media Communication' },
               { slug: 'brand-ambassador-portrait', alt: 'Client launch — from the record of Marks Media Communication' },
+              { slug: 'mandira-wedding-collection', alt: 'Wedding collection campaign — from the record of Marks Media Communication' },
             ]}
           />
         </div>

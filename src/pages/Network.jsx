@@ -39,6 +39,7 @@ export default function Network() {
       />
 
       <PageHero
+        video
         label="Our Network"
         breadcrumbs={crumbs}
         titleLines={network.heading}
@@ -70,6 +71,7 @@ export default function Network() {
             items={[
               { slug: 'bajaj-iphone17', alt: 'Product launch reach — from the record of Marks Media Communication' },
               { slug: 'miss-world-jewellery', alt: 'International reach — from the record of Marks Media Communication' },
+              { slug: 'miss-world-press-conference', alt: 'Press conference — from the record of Marks Media Communication' },
             ]}
           />
 

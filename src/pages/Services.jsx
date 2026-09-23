@@ -70,6 +70,7 @@ export default function Services() {
       />
 
       <PageHero
+        video
         label="Services"
         breadcrumbs={crumbs}
         titleLines={['What', { text: 'we do', accent: true }]}

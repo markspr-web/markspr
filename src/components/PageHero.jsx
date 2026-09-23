@@ -1,5 +1,6 @@
 import Reveal, { RevealLine } from './Reveal'
 import Breadcrumbs from './Breadcrumbs'
+import HeroVideo from './HeroVideo'
 
 /**
  * Interior page hero. `titleLines` accepts strings or { text, accent } objects.
@@ -11,9 +12,13 @@ export default function PageHero({
   intro,
   dark = false,
   breadcrumbs = [],
+  video = false,
 }) {
+  // Footage sits on a navy scrim, so a video hero always uses the light-on-dark type.
+  if (video) dark = true
   return (
-    <section className={dark ? 'bg-navy' : 'bg-white'}>
+    <section className={video ? 'relative isolate overflow-hidden bg-navy' : dark ? 'bg-navy' : 'bg-white'}>
+      {video && <HeroVideo />}
       <div className="container-page pb-14 pt-10 lg:pb-20 lg:pt-14">
         {breadcrumbs.length > 1 && <Breadcrumbs items={breadcrumbs} dark={dark} />}
 

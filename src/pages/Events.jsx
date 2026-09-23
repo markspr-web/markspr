@@ -43,6 +43,7 @@ export default function Events() {
       />
 
       <PageHero
+        video
         label="Events"
         breadcrumbs={crumbs}
         titleLines={['Selected', { text: 'work', accent: true }]}

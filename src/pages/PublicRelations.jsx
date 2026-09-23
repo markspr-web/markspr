@@ -56,6 +56,7 @@ export default function PublicRelations() {
       />
 
       <PageHero
+        video
         label="Public Relations"
         dark
         breadcrumbs={crumbs}
@@ -101,6 +102,7 @@ export default function PublicRelations() {
             items={[
               { slug: 'miss-world-press', alt: 'Press event — from the record of Marks Media Communication' },
               { slug: 'bajaj-samsung-s23', alt: 'Product launch coverage — from the record of Marks Media Communication' },
+              { slug: 'miss-world-pair', alt: 'Media interaction — from the record of Marks Media Communication' },
             ]}
           />
         </div>

@@ -36,6 +36,7 @@ export default function Clients() {
       />
 
       <PageHero
+        video
         label="Clients"
         breadcrumbs={crumbs}
         titleLines={['Trusted by', { text: 'brands', accent: true }, 'across India']}

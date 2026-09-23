@@ -60,7 +60,7 @@
 
   .display-hero {
     @apply font-display font-extrabold uppercase leading-[0.92] tracking-tightest;
-    font-size: clamp(2.75rem, 10vw, 8.5rem);
+    font-size: clamp(2.25rem, 10vw, 8.5rem);
   }
 
   .display-xl {

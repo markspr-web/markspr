@@ -4,6 +4,7 @@ import Seo from '../components/Seo'
 import Reveal, { RevealLine } from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import PhotoStrip from '../components/PhotoStrip'
+import HeroVideo from '../components/HeroVideo'
 import { about, services, events, clients, network, company, seo, siteUrl } from '../data/site'
 import { clientLogo } from '../data/clientLogos'
 import { eventPhoto } from '../data/eventPhotos'
@@ -14,7 +15,8 @@ import { eventPhoto } from '../data/eventPhotos'
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy">
+    <section className="relative isolate overflow-hidden bg-navy">
+      <HeroVideo />
       {/* Flat 2D geometry — thin lines only, no depth. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-y-0 left-1/2 hidden w-px bg-white/10 lg:block" />
@@ -78,7 +80,8 @@ function ImpactPhotos() {
         <PhotoStrip
           items={[
             { slug: 'samsung-tv-launch', alt: 'Client product launch — from the record of Marks Media Communication' },
-            { slug: 'miss-world-jewellery', alt: 'Client event — from the record of Marks Media Communication' },
+            { slug: 'miss-world-lamp-lighting', alt: 'Ceremonial lamp lighting at a client event — from the record of Marks Media Communication' },
+            { slug: 'shriya-jewellery-launch', alt: 'Jewellery showroom launch — from the record of Marks Media Communication' },
           ]}
         />
       </div>
