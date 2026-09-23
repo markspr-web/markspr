@@ -6,7 +6,9 @@ import VideoBand from '../components/VideoBand'
 import { videos } from '../data/videos'
 import Reveal, { RevealLine } from '../components/Reveal'
 import PhotoStrip from '../components/PhotoStrip'
+import CountUp from '../components/CountUp'
 import { about, seo } from '../data/site'
+import { eventPhoto } from '../data/eventPhotos'
 
 const crumbs = [
   { name: 'Home', path: '/' },
@@ -68,7 +70,7 @@ export default function About() {
             <div className="lg:col-span-5">
               <Reveal className="border-t border-navy pt-6">
                 <div className="font-display text-[5.5rem] font-extrabold leading-none tracking-tightest text-blue sm:text-[7rem]">
-                  40+
+                  <CountUp value="40+" />
                 </div>
                 <p className="mt-4 text-sm uppercase tracking-[0.16em] text-slate">
                   Years of experience in Public Relations and Advertising
@@ -76,7 +78,7 @@ export default function About() {
               </Reveal>
               <Reveal delay={0.06} className="mt-10 border-t border-lightblue pt-6">
                 <div className="font-display text-4xl font-extrabold tracking-tightest text-navy">
-                  1000+
+                  <CountUp value="1000+" />
                 </div>
                 <p className="mt-3 text-sm uppercase tracking-[0.16em] text-slate">
                   Brands served in India, alongside international clients
@@ -96,6 +98,13 @@ export default function About() {
               { slug: 'jewellery-portrait', alt: 'Client work — from the record of Marks Media Communication' },
               { slug: 'brand-ambassador-portrait', alt: 'Client launch — from the record of Marks Media Communication' },
               { slug: 'mandira-wedding-collection', alt: 'Wedding collection campaign — from the record of Marks Media Communication' },
+              { slug: 'mandira-orange-portrait', alt: 'Jewellery campaign portrait — from the record of Marks Media Communication' },
+              { slug: 'saree-showcase', alt: 'Saree showcase — from the record of Marks Media Communication' },
+              {
+                slug: 'angela-krislinzki-samsung-event',
+                src: eventPhoto('angela-krislinzki-samsung-event'),
+                alt: 'Product launch appearance — from the record of Marks Media Communication',
+              },
             ]}
           />
         </div>
@@ -180,7 +189,7 @@ export default function About() {
               { to: '/public-relations', title: 'Public relations', text: 'How we shape and protect reputation, from media monitoring to crisis management.' },
               { to: '/contact', title: 'Contact us', text: 'Talk to the team in Banjara Hills, Hyderabad about your brief.' },
             ].map((l) => (
-              <Reveal key={l.to} className="bg-white">
+              <Reveal key={l.to} className="relative bg-white transition-shadow duration-300 hover:z-10 hover:shadow-lg">
                 <Link
                   to={l.to}
                   className="group flex h-full flex-col justify-between gap-6 p-7 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"

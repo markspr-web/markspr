@@ -7,6 +7,7 @@ import { videos } from '../data/videos'
 import Reveal, { RevealLine } from '../components/Reveal'
 import PhotoStrip from '../components/PhotoStrip'
 import { publicRelations as pr, seo, siteUrl } from '../data/site'
+import { servicePhoto } from '../data/servicePhotos'
 
 const crumbs = [
   { name: 'Home', path: '/' },
@@ -103,6 +104,17 @@ export default function PublicRelations() {
               { slug: 'miss-world-press', alt: 'Press event — from the record of Marks Media Communication' },
               { slug: 'bajaj-samsung-s23', alt: 'Product launch coverage — from the record of Marks Media Communication' },
               { slug: 'miss-world-pair', alt: 'Media interaction — from the record of Marks Media Communication' },
+              { slug: 'hilife-brides-launch', alt: 'Bridal couture exhibition — from the record of Marks Media Communication' },
+              {
+                slug: 'celebrity-management-pr',
+                src: servicePhoto('celebrity-management'),
+                alt: 'Celebrity management — from the record of Marks Media Communication',
+              },
+              {
+                slug: 'influencer-marketing-pr',
+                src: servicePhoto('influencer-marketing'),
+                alt: 'Influencer marketing campaign — from the record of Marks Media Communication',
+              },
             ]}
           />
         </div>

@@ -5,22 +5,43 @@ import PageHero from '../components/PageHero'
 import VideoBand from '../components/VideoBand'
 import { videos } from '../data/videos'
 import Reveal from '../components/Reveal'
+import ImageReveal from '../components/ImageReveal'
 import { services, anyEvent, seo, siteUrl } from '../data/site'
+import { servicePhoto } from '../data/servicePhotos'
 
 const crumbs = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
 ]
 
-function Row({ s }) {
+function Row({ s, i }) {
+  const photo = servicePhoto(s.slug)
+  const delay = Math.min(i, 5) * 0.04
   return (
-    <Reveal as="li">
+    <Reveal as="li" delay={delay}>
       <Link
         to={`/services/${s.slug}`}
         className="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
       >
-        <div className="grid grid-cols-12 gap-4 py-9 lg:py-11">
-          <div className="col-span-12 sm:col-span-5">
+        <div className="grid grid-cols-12 items-center gap-4 py-7 lg:py-9">
+          <div className="col-span-3 sm:col-span-2">
+            {photo ? (
+              <span className="block aspect-square w-full overflow-hidden rounded-sm border border-lightblue bg-offwhite">
+                <ImageReveal delay={delay}>
+                  <img
+                    src={photo}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-top grayscale transition duration-500 ease-out group-hover:scale-[1.06] group-hover:grayscale-0 motion-reduce:transition-none"
+                  />
+                </ImageReveal>
+              </span>
+            ) : (
+              <span className="block aspect-square w-full rounded-sm border border-lightblue bg-offwhite" />
+            )}
+          </div>
+          <div className="col-span-9 sm:col-span-3">
             <h3 className="display-lg text-navy transition-colors group-hover:text-bluehover">
               {s.title}
             </h3>
@@ -81,8 +102,8 @@ export default function Services() {
         <div className="container-page pb-8">
           <h2 className="sr-only">Our services</h2>
           <ul className="border-t border-lightblue">
-            {services.map((s) => (
-              <Row key={s.slug} s={s} />
+            {services.map((s, i) => (
+              <Row key={s.slug} s={s} i={i} />
             ))}
           </ul>
         </div>

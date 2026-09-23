@@ -16,7 +16,12 @@ export default function ClientGrid({ clients }) {
       {clients.map((c, i) => {
         const logo = clientLogo(c.slug)
         return (
-          <Reveal as="li" key={c.slug} delay={(i % 5) * 0.03} className="group bg-white">
+          <Reveal
+            as="li"
+            key={c.slug}
+            delay={(i % 5) * 0.03}
+            className="group relative overflow-hidden bg-white transition-shadow duration-300 hover:z-10 hover:shadow-md"
+          >
             <div className="flex h-28 items-center justify-center px-5 py-6 sm:h-32 sm:px-6">
               {logo ? (
                 <img
@@ -24,7 +29,7 @@ export default function ClientGrid({ clients }) {
                   alt={`${c.name} logo`}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-12 w-auto max-w-full object-contain opacity-60 grayscale transition duration-300 ease-out group-hover:opacity-100 group-hover:grayscale-0 sm:max-h-14"
+                  className="max-h-12 w-auto max-w-full object-contain opacity-60 grayscale transition duration-300 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 motion-reduce:transition-none sm:max-h-14"
                 />
               ) : (
                 <span className="text-center font-display text-base font-bold uppercase leading-tight tracking-tightest text-slate transition-colors duration-300 group-hover:text-blue sm:text-lg">

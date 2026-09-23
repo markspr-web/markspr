@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
+import FeaturePhoto from '../components/FeaturePhoto'
 import NotFound from './NotFound'
 import { services, siteUrl, company } from '../data/site'
 import { servicePhoto } from '../data/servicePhotos'
@@ -68,15 +69,15 @@ export default function ServiceDetail() {
               {photo && (
                 <Reveal className="mb-12">
                   <figure className="group">
-                    <div className="flex w-full justify-center overflow-hidden border border-lightblue bg-offwhite">
+                    <FeaturePhoto>
                       <img
                         src={photo}
                         alt={`${service.title} — work by ${company.name}`}
                         loading="lazy"
                         decoding="async"
-                        className="max-h-[28rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:grayscale-0 motion-reduce:transition-none"
+                        className="max-h-[28rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:scale-[1.025] group-hover:grayscale-0 motion-reduce:transition-none"
                       />
-                    </div>
+                    </FeaturePhoto>
                     <figcaption className="mt-3 text-xs uppercase tracking-[0.16em] text-slate">
                       {service.title} · from {company.name}’s record
                     </figcaption>
@@ -112,7 +113,7 @@ export default function ServiceDetail() {
           <nav aria-label="More services" className="mt-8 grid gap-6 sm:grid-cols-2">
             <Link
               to={`/services/${prev.slug}`}
-              className="group flex items-center gap-3 rounded-sm border border-lightblue p-6 transition-colors hover:border-navy"
+              className="group flex items-center gap-3 rounded-sm border border-lightblue p-6 transition hover:border-navy hover:shadow-md"
             >
               <ArrowLeft size={18} className="text-blue" />
               <span>
@@ -124,7 +125,7 @@ export default function ServiceDetail() {
             </Link>
             <Link
               to={`/services/${next.slug}`}
-              className="group flex items-center justify-end gap-3 rounded-sm border border-lightblue p-6 text-right transition-colors hover:border-navy"
+              className="group flex items-center justify-end gap-3 rounded-sm border border-lightblue p-6 text-right transition hover:border-navy hover:shadow-md"
             >
               <span>
                 <span className="block text-xs uppercase tracking-[0.16em] text-slate">Next</span>

@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
+import FeaturePhoto from '../components/FeaturePhoto'
 import NotFound from './NotFound'
 import { events, services, siteUrl, company } from '../data/site'
 import { eventPhoto } from '../data/eventPhotos'
@@ -92,15 +93,15 @@ export default function EventDetail() {
               <Reveal>
                 {photo ? (
                   <figure className="group">
-                    <div className="flex w-full justify-center overflow-hidden border border-lightblue bg-offwhite">
+                    <FeaturePhoto>
                       <img
                         src={photo}
                         alt={`${event.title} — event by ${company.name}`}
                         loading="lazy"
                         decoding="async"
-                        className="max-h-[36rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:grayscale-0 motion-reduce:transition-none"
+                        className="max-h-[36rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:scale-[1.025] group-hover:grayscale-0 motion-reduce:transition-none"
                       />
-                    </div>
+                    </FeaturePhoto>
                     <figcaption className="mt-3 text-xs uppercase tracking-[0.16em] text-slate">
                       {event.tag} · from {company.name}’s record
                     </figcaption>
@@ -147,7 +148,7 @@ export default function EventDetail() {
           <nav aria-label="More events" className="mt-8 grid gap-6 sm:grid-cols-2">
             <Link
               to={`/events/${prev.slug}`}
-              className="group flex items-center gap-3 rounded-sm border border-lightblue p-6 transition-colors hover:border-navy"
+              className="group flex items-center gap-3 rounded-sm border border-lightblue p-6 transition hover:border-navy hover:shadow-md"
             >
               <ArrowLeft size={18} className="shrink-0 text-blue" />
               <span>
@@ -159,7 +160,7 @@ export default function EventDetail() {
             </Link>
             <Link
               to={`/events/${next.slug}`}
-              className="group flex items-center justify-end gap-3 rounded-sm border border-lightblue p-6 text-right transition-colors hover:border-navy"
+              className="group flex items-center justify-end gap-3 rounded-sm border border-lightblue p-6 text-right transition hover:border-navy hover:shadow-md"
             >
               <span>
                 <span className="block text-xs uppercase tracking-[0.16em] text-slate">Next</span>

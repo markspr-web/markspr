@@ -4,7 +4,6 @@ import PageHero from '../components/PageHero'
 import VideoBand from '../components/VideoBand'
 import { videos } from '../data/videos'
 import ClientGrid from '../components/ClientGrid'
-import PhotoStrip from '../components/PhotoStrip'
 import { clients, seo } from '../data/site'
 import { clientLogoCount } from '../data/clientLogos'
 

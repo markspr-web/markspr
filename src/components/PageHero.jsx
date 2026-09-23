@@ -29,23 +29,21 @@ export default function PageHero({
           </Reveal>
         )}
 
-        <Reveal>
-          <h1
-            className={`display-hero ${dark ? 'text-white' : 'text-navy'}`}
-            aria-label={titleLines.map((w) => (typeof w === 'object' ? w.text : w)).join(' ')}
-          >
-            {titleLines.map((w, i) => {
-              const isObj = typeof w === 'object'
-              return (
-                <span key={i} className="block" aria-hidden="true">
-                  <span className={isObj && w.accent ? 'text-blue' : undefined}>
-                    {isObj ? w.text : w}
-                  </span>
+        <h1
+          className={`display-hero ${dark ? 'text-white' : 'text-navy'}`}
+          aria-label={titleLines.map((w) => (typeof w === 'object' ? w.text : w)).join(' ')}
+        >
+          {titleLines.map((w, i) => {
+            const isObj = typeof w === 'object'
+            return (
+              <Reveal key={i} as="span" delay={i * 0.08} className="block" aria-hidden="true">
+                <span className={isObj && w.accent ? 'text-blue' : undefined}>
+                  {isObj ? w.text : w}
                 </span>
-              )
-            })}
-          </h1>
-        </Reveal>
+              </Reveal>
+            )
+          })}
+        </h1>
 
         {intro && (
           <Reveal delay={0.1} className="mt-10 max-w-2xl">

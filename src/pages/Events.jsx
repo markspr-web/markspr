@@ -8,6 +8,7 @@ import VideoBand from '../components/VideoBand'
 import { videos } from '../data/videos'
 import { events, seo, siteUrl } from '../data/site'
 import { eventPhoto } from '../data/eventPhotos'
+import ImageReveal from '../components/ImageReveal'
 
 const crumbs = [
   { name: 'Home', path: '/' },
@@ -46,7 +47,7 @@ export default function Events() {
         video
         label="Events"
         breadcrumbs={crumbs}
-        titleLines={['Selected', { text: 'work', accent: true }]}
+        titleLines={['Events at', { text: 'Marks Media', accent: true }, 'Communication']}
         intro="Product launches, exhibitions, celebrity appearances, award ceremonies and brand-ambassador announcements managed by Marks Media Communication."
       />
 
@@ -94,13 +95,15 @@ export default function Events() {
                     <span className="col-span-3 sm:col-span-2">
                       {eventPhoto(e.slug) ? (
                         <span className="block aspect-square w-full overflow-hidden rounded-sm border border-lightblue bg-offwhite">
-                          <img
-                            src={eventPhoto(e.slug)}
-                            alt=""
-                            loading="lazy"
-                            decoding="async"
-                            className="h-full w-full object-cover object-top grayscale transition duration-500 ease-out group-hover:grayscale-0 motion-reduce:transition-none"
-                          />
+                          <ImageReveal delay={Math.min(i, 5) * 0.04}>
+                            <img
+                              src={eventPhoto(e.slug)}
+                              alt=""
+                              loading="lazy"
+                              decoding="async"
+                              className="h-full w-full object-cover object-top grayscale transition duration-500 ease-out group-hover:scale-[1.06] group-hover:grayscale-0 motion-reduce:transition-none"
+                            />
+                          </ImageReveal>
                         </span>
                       ) : (
                         <span className="block aspect-square w-full rounded-sm border border-lightblue bg-offwhite" />

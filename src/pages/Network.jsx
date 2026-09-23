@@ -5,7 +5,9 @@ import VideoBand from '../components/VideoBand'
 import { videos } from '../data/videos'
 import Reveal, { RevealLine } from '../components/Reveal'
 import PhotoStrip from '../components/PhotoStrip'
+import CountUp from '../components/CountUp'
 import { network, seo } from '../data/site'
+import { servicePhoto } from '../data/servicePhotos'
 
 const crumbs = [
   { name: 'Home', path: '/' },
@@ -52,7 +54,7 @@ export default function Network() {
             {network.points.map((p) => (
               <Reveal key={p.title} className="bg-offwhite p-8">
                 <div className="font-display text-4xl font-extrabold tracking-tightest text-blue lg:text-5xl">
-                  {p.value}
+                  <CountUp value={p.value} />
                 </div>
                 <div className="mt-4 font-display text-sm font-semibold uppercase tracking-[0.12em] text-navy">
                   {p.title}
@@ -72,6 +74,21 @@ export default function Network() {
               { slug: 'bajaj-iphone17', alt: 'Product launch reach — from the record of Marks Media Communication' },
               { slug: 'miss-world-jewellery', alt: 'International reach — from the record of Marks Media Communication' },
               { slug: 'miss-world-press-conference', alt: 'Press conference — from the record of Marks Media Communication' },
+              {
+                slug: 'brand-management-network',
+                src: servicePhoto('brand-management'),
+                alt: 'Brand management — from the record of Marks Media Communication',
+              },
+              {
+                slug: 'product-launch-network',
+                src: servicePhoto('product-launch'),
+                alt: 'Industry product launch — from the record of Marks Media Communication',
+              },
+              {
+                slug: 'event-management-network',
+                src: servicePhoto('event-management'),
+                alt: 'Event management reach — from the record of Marks Media Communication',
+              },
             ]}
           />
 

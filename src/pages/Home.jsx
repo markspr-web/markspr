@@ -5,6 +5,8 @@ import Reveal, { RevealLine } from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import PhotoStrip from '../components/PhotoStrip'
 import HeroVideo from '../components/HeroVideo'
+import CountUp from '../components/CountUp'
+import ImageReveal from '../components/ImageReveal'
 import { about, services, events, clients, network, company, seo, siteUrl } from '../data/site'
 import { clientLogo } from '../data/clientLogos'
 import { eventPhoto } from '../data/eventPhotos'
@@ -82,6 +84,9 @@ function ImpactPhotos() {
             { slug: 'samsung-tv-launch', alt: 'Client product launch — from the record of Marks Media Communication' },
             { slug: 'miss-world-lamp-lighting', alt: 'Ceremonial lamp lighting at a client event — from the record of Marks Media Communication' },
             { slug: 'shriya-jewellery-launch', alt: 'Jewellery showroom launch — from the record of Marks Media Communication' },
+            { slug: 'femina-press-conference', alt: 'Press conference — from the record of Marks Media Communication' },
+            { slug: 'mg-hector-launch', alt: 'Automotive unveiling — from the record of Marks Media Communication' },
+            { slug: 'keychron-launch', alt: 'Technology product launch — from the record of Marks Media Communication' },
           ]}
         />
       </div>
@@ -120,7 +125,7 @@ function AboutTeaser() {
               {about.stats.map((s) => (
                 <Reveal key={s.label} className="bg-white p-6">
                   <div className="font-display text-4xl font-extrabold tracking-tightest text-blue lg:text-5xl">
-                    {s.value}
+                    <CountUp value={s.value} />
                   </div>
                   <div className="mt-3 text-xs uppercase tracking-[0.14em] text-slate">{s.label}</div>
                 </Reveal>
@@ -251,28 +256,33 @@ function PRBand() {
 /* -------------------------------------------------------------------------- */
 
 function EventsTeaser() {
-  const featured = events.slice(0, 6)
+  const featured = events
   return (
     <section className="bg-white">
       <div className="container-page py-20 lg:py-28">
-        <SectionHeading eyebrow="Events" words={['Selected', { text: 'work', accent: true }]} />
+        <SectionHeading
+          eyebrow="Events"
+          words={['Events at', { text: 'Marks Media', accent: true }, 'Communication']}
+        />
 
         <div className="mt-12 grid gap-px border border-lightblue bg-lightblue sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((e, i) => (
-            <Reveal key={e.slug} delay={(i % 3) * 0.04}>
+            <Reveal key={e.slug} delay={Math.min(i, 5) * 0.05}>
               <Link
                 to={`/events/${e.slug}`}
-                className="group flex h-full flex-col bg-white focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-blue"
+                className="group flex h-full flex-col bg-white transition-shadow duration-300 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-blue"
               >
                 <div className="aspect-[4/3] w-full overflow-hidden bg-offwhite">
                   {eventPhoto(e.slug) && (
-                    <img
-                      src={eventPhoto(e.slug)}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover object-top grayscale transition duration-500 ease-out group-hover:grayscale-0 motion-reduce:transition-none"
-                    />
+                    <ImageReveal delay={Math.min(i, 5) * 0.05}>
+                      <img
+                        src={eventPhoto(e.slug)}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover object-top grayscale transition duration-500 ease-out group-hover:scale-[1.06] group-hover:grayscale-0 motion-reduce:transition-none"
+                      />
+                    </ImageReveal>
                   )}
                 </div>
                 <div className="flex flex-1 items-start justify-between gap-3 p-5">
