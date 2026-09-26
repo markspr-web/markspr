@@ -7,8 +7,9 @@ import PhotoStrip from '../components/PhotoStrip'
 import HeroVideo from '../components/HeroVideo'
 import CountUp from '../components/CountUp'
 import ImageReveal from '../components/ImageReveal'
-import { about, services, events, clients, network, company, seo, siteUrl } from '../data/site'
+import { about, services, events, clients, media, network, company, seo, siteUrl } from '../data/site'
 import { clientLogo } from '../data/clientLogos'
+import { mediaLogo } from '../data/mediaLogos'
 import { eventPhoto } from '../data/eventPhotos'
 
 /* -------------------------------------------------------------------------- */
@@ -388,6 +389,44 @@ function ClientsStrip() {
 }
 
 /* -------------------------------------------------------------------------- */
+/*  Media marquee                                                              */
+/* -------------------------------------------------------------------------- */
+
+function MediaStrip() {
+  const row = [...media, ...media]
+  return (
+    <section className="border-b border-lightblue bg-white">
+      <div className="container-page py-14 lg:py-16">
+        <SectionHeading eyebrow="In the press" words={['Featured across', 'leading media']} />
+      </div>
+      <div className="relative overflow-hidden py-8" aria-hidden="true">
+        <div className="flex w-max animate-marquee items-center gap-10 whitespace-nowrap will-change-transform">
+          {row.map((m, i) => {
+            const logo = mediaLogo(m.slug)
+            return (
+              <span key={`${m.slug}-${i}`} className="flex items-center gap-10">
+                {logo ? (
+                  <img
+                    src={logo}
+                    alt=""
+                    className="h-7 w-auto object-contain opacity-50 grayscale sm:h-8"
+                  />
+                ) : (
+                  <span className="font-display text-xl font-bold uppercase tracking-tightest text-slate/70 sm:text-2xl">
+                    {m.name}
+                  </span>
+                )}
+                <span className="text-red">·</span>
+              </span>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
 
 export default function Home() {
   return (
@@ -418,6 +457,7 @@ export default function Home() {
       <EventsTeaser />
       <NetworkTeaser />
       <ClientsStrip />
+      <MediaStrip />
     </>
   )
 }

@@ -327,6 +327,29 @@ export const clients = [
   { name: 'hijs', slug: 'hijs' },
 ]
 
+// Media outlets that have covered / featured Marks Media Communication's work.
+// `slug` is the filename stem for an optional official logo dropped into
+// src/assets/media/ (e.g. times-of-india.svg). When no logo file exists the
+// name is shown as text — see src/data/mediaLogos.js.
+export const media = [
+  { name: 'The Times of India', slug: 'times-of-india' },
+  { name: 'The Hindu', slug: 'the-hindu' },
+  { name: 'The Indian Express', slug: 'indian-express' },
+  { name: 'Deccan Chronicle', slug: 'deccan-chronicle' },
+  { name: 'Business Standard', slug: 'business-standard' },
+  { name: 'The Hans India', slug: 'hans-india' },
+  { name: 'Telangana Today', slug: 'telangana-today' },
+  { name: 'Hindu BusinessLine', slug: 'hindu-businessline' },
+  { name: 'Mid-Day', slug: 'mid-day' },
+  { name: 'Dainik Bhaskar', slug: 'dainik-bhaskar' },
+  { name: 'Rajasthan Patrika', slug: 'rajasthan-patrika' },
+  { name: 'Sakshi', slug: 'sakshi' },
+  { name: 'TV5 News', slug: 'tv5-news' },
+  { name: 'Munsif Daily', slug: 'munsif-daily' },
+  { name: 'Gujarat Today', slug: 'gujarat-today' },
+  { name: 'Lokshahi', slug: 'lokshahi' },
+]
+
 export const network = {
   heading: ['A network that', 'reaches beyond', 'the region'],
   intro:
