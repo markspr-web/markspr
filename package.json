@@ -6,7 +6,7 @@
   "description": "Marks Media Communication — Public Relations & Advertising agency, Deccan region of India.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.mjs"
   },

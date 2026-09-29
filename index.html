@@ -10,19 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0B2433" />
 
-    <!-- Static fallback metadata. Per-route values are set at runtime by src/components/Seo.jsx -->
-    <title>Marks Media Communication | Public Relations &amp; Advertising Agency</title>
+    <!-- Static fallback metadata. At build time scripts/prerender.mjs replaces the
+         block between the seo markers with each route's own tags (src/components/Seo.jsx). -->
+    <!--seo-->
+    <title>PR Agency in Hyderabad, South India &amp; India | Marks Media Communication</title>
     <meta
       name="description"
-      content="Marks Media Communication is a public relations and advertising agency in Hyderabad with more than 40 years of experience across media relations, branding, corporate PR, advertising, events and celebrity management."
+      content="Marks Media Communication is a PR and advertising agency in Hyderabad — one of the oldest in South India, with 40+ years and 1000+ brands served across India. Media relations, corporate PR, branding, events and celebrity management."
     />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="public relations agency, PR agency Hyderabad, advertising agency Hyderabad, media relations, corporate PR, brand management, media communications" />
+    <meta name="keywords" content="PR agency in Hyderabad, PR agency in South India, PR agency in India, public relations agency Hyderabad, advertising agency Hyderabad, media relations, corporate PR" />
     <link rel="canonical" href="https://markspr.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Marks Media Communication" />
-    <meta property="og:title" content="Marks Media Communication | Public Relations &amp; Advertising Agency" />
+    <meta property="og:title" content="PR Agency in Hyderabad, South India &amp; India | Marks Media Communication" />
     <meta
       property="og:description"
       content="A public relations and advertising agency in Hyderabad with more than 40 years of experience."
@@ -33,24 +35,16 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_IN" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Marks Media Communication | Public Relations &amp; Advertising Agency" />
+    <meta name="twitter:title" content="PR Agency in Hyderabad, South India &amp; India | Marks Media Communication" />
     <meta
       name="twitter:description"
       content="A public relations and advertising agency in Hyderabad with more than 40 years of experience."
     />
     <meta name="twitter:image" content="https://markspr.com/og-image.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": ["Organization", "LocalBusiness"],
+        "@type": ["Organization", "ProfessionalService"],
         "@id": "https://markspr.com/#organization",
         "name": "Marks Media Communication",
         "alternateName": "Marks PR",
@@ -79,6 +73,15 @@
         }
       }
     </script>
+    <!--/seo-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
   </head>
   <body>
     <div id="root"></div>

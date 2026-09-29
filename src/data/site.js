@@ -12,9 +12,9 @@ export const company = {
   tagline: 'Get the attention you deserve',
   taglineDisplay: ['Get the', 'attention', 'you deserve'],
   positioning:
-    'A Public Relations and Advertising agency in the Deccan region of India with more than 40 years of experience.',
+    'A Public Relations and Advertising agency in Hyderabad, serving clients across South India and India, with more than 40 years of experience.',
   intro:
-    'Marks Media Communication is a trademark Public Relations and Advertising agency in the Deccan region of India, with a history spanning more than 40 years. We build reputation, identity and image for private and public institutions through research, precise planning and strategic communication.',
+    'Marks Media Communication is a trademark Public Relations and Advertising agency in Hyderabad — one of the oldest in South India — serving clients across India, with a history spanning more than 40 years. We build reputation, identity and image for private and public institutions through research, precise planning and strategic communication.',
   social: [
     'https://www.youtube.com/c/MarksMediaCommunications',
     'https://www.instagram.com/marksmediacommunications',
@@ -246,6 +246,13 @@ export const publicRelations = {
 // chips on /events. `related` links to a service slug.
 export const events = [
   {
+    slug: 'hilife-exhibition-september-special',
+    title: 'HiLife Exhibition – September Special',
+    seoTitle: 'HiLife Exhibition – September Special, Hyderabad',
+    tag: 'Event Management',
+    related: 'event-management',
+  },
+  {
     slug: 'femina-miss-india-telangana-2027-launch',
     title: 'Femina Miss India Telangana 2027 launched at The Westin, Hyderabad',
     seoTitle: 'Femina Miss India Telangana 2027 launch',
@@ -265,13 +272,6 @@ export const events = [
     seoTitle: 'Keychron launch, Hyderabad',
     tag: 'Product Launch',
     related: 'product-launch',
-  },
-  {
-    slug: 'hilife-brides',
-    title: 'Hi-Life Brides — wedding & bridal shopping exhibition, Hyderabad',
-    seoTitle: 'Hi-Life Brides exhibition, Hyderabad',
-    tag: 'Event Management',
-    related: 'event-management',
   },
   {
     slug: 'actress-taapsee-launch',
@@ -395,35 +395,35 @@ export const siteUrl = 'https://markspr.com'
 // -----------------------------------------------------------------------------
 export const seo = {
   home: {
-    title: 'Marks Media Communication | Public Relations & Advertising Agency',
+    title: 'PR Agency in Hyderabad, South India & India | Marks Media Communication',
     description:
-      'Marks Media Communication is a public relations and advertising agency in Hyderabad with more than 40 years of experience across media relations, branding, corporate PR, advertising, events and celebrity management.',
+      'Marks Media Communication is a PR and advertising agency in Hyderabad — one of the oldest in South India, with 40+ years and 1000+ brands served across India. Media relations, corporate PR, branding, events and celebrity management.',
     keywords:
-      'public relations agency, PR agency Hyderabad, advertising agency Hyderabad, media relations, corporate PR, brand management, media communications',
+      'PR agency in Hyderabad, PR agency in South India, PR agency in India, public relations agency Hyderabad, best PR agency Hyderabad, PR firm Hyderabad, PR company Telangana, advertising agency Hyderabad, media relations, corporate PR, celebrity management',
   },
   about: {
-    title: 'About Marks Media Communication | 40+ Years of PR & Advertising',
+    title: 'About Us | One of the Oldest PR Agencies in South India — Marks Media',
     description:
       'One of the oldest public relations agencies in South India — Marks Media Communication specialises in PR, advertising, branding, image management and crisis management from Banjara Hills, Hyderabad.',
     keywords:
-      'about Marks Media Communication, PR agency Hyderabad, advertising agency Deccan, corporate reputation, image management, oldest PR agency South India',
+      'about Marks Media Communication, PR agency in Hyderabad, oldest PR agency in South India, PR agency in India, advertising agency Hyderabad, corporate reputation, image management',
   },
   services: {
-    title: 'PR & Advertising Services | Marks Media Communication',
+    title: 'PR & Advertising Services in Hyderabad | Marks Media Communication',
     description:
       'Media relations, press releases, brand management, corporate PR, product launches, advertising, event management, celebrity management and influencer marketing from a PR agency with more than 40 years of experience.',
     keywords:
-      'PR services, advertising services, media relations, press release, brand management, corporate PR, product launch, event management, celebrity management, influencer marketing',
+      'PR services Hyderabad, PR services India, advertising services Hyderabad, media relations, press release, brand management, corporate PR, product launch, event management, celebrity management, influencer marketing',
   },
   publicRelations: {
-    title: 'Public Relations Agency | Media Relations & Crisis Management',
+    title: 'Public Relations Agency in Hyderabad | Media Relations & Crisis PR',
     description:
-      'Public relations that shapes and protects reputation — media relations, media monitoring, press releases, brand management, corporate PR, concept promotions and crisis management in Hyderabad.',
+      'Public relations that shapes and protects reputation — media relations, media monitoring, press releases, brand management, corporate PR, concept promotions and crisis management from a Hyderabad PR agency working across South India and India.',
     keywords:
-      'public relations agency, media relations, media monitoring, press release, crisis management, concept promotions, corporate PR Hyderabad',
+      'public relations agency Hyderabad, PR agency in Hyderabad, PR agency South India, media relations, media monitoring, press release, crisis management, corporate PR Hyderabad',
   },
   events: {
-    title: 'Events & Media Events | Marks Media Communication',
+    title: 'Events, Launches & Press Meets in Hyderabad | Marks Media Communication',
     description:
       'Product launches, exhibitions, celebrity appearances, award ceremonies and brand-ambassador announcements managed by Marks Media Communication, a public relations and advertising agency in Hyderabad.',
     keywords:
@@ -434,20 +434,20 @@ export const seo = {
     description:
       'Marks Media Communication works from the Deccan region of India through media, industry and celebrity relationships built over more than 40 years, across print, electronic and outdoor media.',
     keywords:
-      'PR network, media relationships, celebrity management, advertising media, Deccan region PR agency',
+      'PR network India, media relationships, celebrity management, advertising media, PR agency South India',
   },
   clients: {
-    title: 'Our Clients | Marks Media Communication',
+    title: 'Our Clients | PR Agency in Hyderabad — Marks Media Communication',
     description:
       'A selection of the brands and institutions Marks Media Communication has worked with across India in public relations, advertising and events.',
     keywords: 'PR agency clients, advertising agency clients, Marks Media Communication clients',
   },
   contact: {
-    title: 'Contact Marks Media Communication | PR Agency in Hyderabad',
+    title: 'Contact | PR Agency in Banjara Hills, Hyderabad — Marks Media',
     description:
       'Talk to Marks Media Communication — 1-C, Atlas, Road No. 10, Banjara Hills, Hyderabad. Public relations and advertising with more than 40 years of experience.',
     keywords:
-      'contact PR agency Hyderabad, advertising agency Banjara Hills, Marks Media Communication contact',
+      'contact PR agency Hyderabad, PR agency Banjara Hills, advertising agency Banjara Hills, Marks Media Communication contact',
   },
   notFound: {
     title: 'Page Not Found | Marks Media Communication',
@@ -461,7 +461,7 @@ export const ogImage = `${siteUrl}/og-image.png`
 
 // Organization / LocalBusiness structured data (shared) ---------------------
 export const organizationSchema = {
-  '@type': ['Organization', 'LocalBusiness'],
+  '@type': ['Organization', 'ProfessionalService'],
   '@id': `${siteUrl}/#organization`,
   name: company.name,
   legalName: company.legalName,
@@ -475,7 +475,24 @@ export const organizationSchema = {
   faxNumber: '+91-40-66466779',
   slogan: company.tagline,
   foundingLocation: 'Hyderabad, Telangana, India',
-  areaServed: 'IN',
+  areaServed: [
+    { '@type': 'City', name: 'Hyderabad' },
+    { '@type': 'State', name: 'Telangana' },
+    { '@type': 'State', name: 'Andhra Pradesh' },
+    { '@type': 'Place', name: 'South India' },
+    { '@type': 'Country', name: 'India' },
+  ],
+  knowsAbout: [
+    'Public relations',
+    'Media relations',
+    'Corporate PR',
+    'Crisis management',
+    'Brand management',
+    'Advertising',
+    'Event management',
+    'Celebrity management',
+    'Influencer marketing',
+  ],
   address: {
     '@type': 'PostalAddress',
     streetAddress: "1-C, Atlas, Opposite Rainbow Children's Hospital, Road No. 10, Banjara Hills",

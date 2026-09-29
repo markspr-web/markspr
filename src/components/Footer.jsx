@@ -40,8 +40,8 @@ export default function Footer() {
               Get the attention you deserve.
             </p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-lightblue/80">
-              A Public Relations and Advertising agency in the Deccan region of India with more
-              than 40 years of experience.
+              A Public Relations and Advertising agency in Hyderabad, serving clients across South
+              India and India, with more than 40 years of experience.
             </p>
             <div className="mt-6">
               <h3 className="eyebrow mb-3 text-white">Follow</h3>

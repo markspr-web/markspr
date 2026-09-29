@@ -32,10 +32,13 @@ function Hero() {
         <div className="flex min-h-[calc(100vh-96px)] flex-col justify-center py-20 lg:py-28">
           <Reveal className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-red" aria-hidden="true" />
-            <span className="eyebrow text-lightblue">Marks Media Communication</span>
+            {/* The page's H1 carries what people search for; the slogan below is display type. */}
+            <h1 className="eyebrow text-lightblue">
+              Marks Media Communication — PR &amp; Advertising Agency in Hyderabad
+            </h1>
           </Reveal>
 
-          <h1 className="display-hero text-white" aria-label="Get the attention you deserve">
+          <p className="display-hero text-white" aria-label="Get the attention you deserve">
             <Reveal as="span" className="block" aria-hidden="true">
               Get the
             </Reveal>
@@ -46,7 +49,7 @@ function Hero() {
             <Reveal as="span" delay={0.16} className="block" aria-hidden="true">
               you deserve
             </Reveal>
-          </h1>
+          </p>
 
           <RevealLine dark className="mt-12 max-w-xl" delay={0.2} />
 

@@ -19,13 +19,17 @@ const SOURCES = {
  */
 export default function HeroVideo() {
   const ref = useRef(null)
-  const [mobile, setMobile] = useState(() => window.matchMedia(MOBILE_QUERY).matches)
-  const [reduced, setReduced] = useState(() => window.matchMedia(REDUCED_QUERY).matches)
+  // Unknown until mounted: the page is prerendered to static HTML, so the first
+  // render must not depend on the viewport or the server/client markup diverges.
+  const [mobile, setMobile] = useState(null)
+  const [reduced, setReduced] = useState(true)
   const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
     const mq = window.matchMedia(MOBILE_QUERY)
     const rq = window.matchMedia(REDUCED_QUERY)
+    setMobile(mq.matches)
+    setReduced(rq.matches)
     const onMq = (e) => setMobile(e.matches)
     const onRq = (e) => setReduced(e.matches)
     mq.addEventListener('change', onMq)
@@ -36,13 +40,13 @@ export default function HeroVideo() {
     }
   }, [])
 
-  const { src, poster } = SOURCES[mobile ? 'mobile' : 'desktop']
+  const { src, poster } = mobile === null ? {} : SOURCES[mobile ? 'mobile' : 'desktop']
 
   // Switching clips (viewport crossed the breakpoint) restarts from the poster.
   useEffect(() => {
     setPlaying(false)
     const v = ref.current
-    if (!v || reduced) return
+    if (!v || reduced || !src) return
     const kick = () => v.play?.().catch(() => {})
     kick()
     // Some browsers defer autoplay until the tab is visible / data is ready.
@@ -56,13 +60,15 @@ export default function HeroVideo() {
 
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-navy">
-      <img
-        src={poster}
-        alt=""
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
-      />
-      {!reduced && (
+      {poster && (
+        <img
+          src={poster}
+          alt=""
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
+        />
+      )}
+      {src && !reduced && (
         <video
           key={src}
           ref={ref}

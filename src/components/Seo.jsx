@@ -27,6 +27,70 @@ function upsertLink(rel, href) {
 }
 
 /**
+ * Resolves the full head for a route: title, [attr, key, content] meta tuples,
+ * canonical URL and the JSON-LD graph. Shared by the runtime head manager
+ * below and the build-time prerender (scripts/prerender.mjs), so the static
+ * HTML and the live page always carry the same tags.
+ */
+export function buildHead({
+  title,
+  description,
+  path = '/',
+  keywords,
+  noindex = false,
+  type = 'website',
+  schema = [],
+}) {
+  const url = absUrl(path)
+  const meta = [
+    ['name', 'description', description],
+    ['name', 'robots', noindex ? 'noindex, follow' : 'index, follow'],
+    ['name', 'keywords', keywords],
+    ['property', 'og:type', type],
+    ['property', 'og:site_name', company.name],
+    ['property', 'og:title', title],
+    ['property', 'og:description', description],
+    ['property', 'og:url', url],
+    ['property', 'og:image', ogImage],
+    ['property', 'og:image:width', '1200'],
+    ['property', 'og:image:height', '630'],
+    ['property', 'og:locale', 'en_IN'],
+    ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:title', title],
+    ['name', 'twitter:description', description],
+    ['name', 'twitter:image', ogImage],
+  ]
+
+  // JSON-LD: base graph (Organization + WebSite) + page-specific nodes
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      websiteSchema,
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: title,
+        description,
+        isPartOf: { '@id': `https://markspr.com/#website` },
+        about: { '@id': `https://markspr.com/#organization` },
+        inLanguage: 'en-IN',
+      },
+      ...schema,
+    ],
+  }
+
+  return { title, meta, canonical: url, jsonld }
+}
+
+/**
+ * Set during the build-time prerender: each page's <Seo> writes its resolved
+ * head here so scripts/prerender.mjs can inline it into the static HTML.
+ */
+export const ssrHead = { current: null }
+
+/**
  * Per-route SEO head manager. Sets title, description, keywords, robots,
  * canonical, Open Graph, Twitter card and JSON-LD structured data.
  *
@@ -38,56 +102,20 @@ function upsertLink(rel, href) {
  * @param {string}  [type]       og:type (default "website")
  * @param {object[]}[schema]     extra JSON-LD nodes (WebPage/Service/Event/BreadcrumbList…)
  */
-export default function Seo({
-  title,
-  description,
-  path = '/',
-  keywords,
-  noindex = false,
-  type = 'website',
-  schema = [],
-}) {
+export default function Seo(props) {
+  if (import.meta.env.SSR) ssrHead.current = buildHead(props)
+
+  const { title, description, path, keywords, noindex, type, schema = [] } = props
+
   useEffect(() => {
-    const url = absUrl(path)
+    const head = buildHead(props)
 
-    document.title = title
-    upsertMeta('name', 'description', description)
-    upsertMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow')
-    if (keywords) upsertMeta('name', 'keywords', keywords)
-    else removeMeta('name', 'keywords')
-    upsertLink('canonical', url)
-
-    upsertMeta('property', 'og:type', type)
-    upsertMeta('property', 'og:site_name', company.name)
-    upsertMeta('property', 'og:title', title)
-    upsertMeta('property', 'og:description', description)
-    upsertMeta('property', 'og:url', url)
-    upsertMeta('property', 'og:image', ogImage)
-    upsertMeta('property', 'og:image:width', '1200')
-    upsertMeta('property', 'og:image:height', '630')
-    upsertMeta('property', 'og:locale', 'en_IN')
-
-    upsertMeta('name', 'twitter:card', 'summary_large_image')
-    upsertMeta('name', 'twitter:title', title)
-    upsertMeta('name', 'twitter:description', description)
-    upsertMeta('name', 'twitter:image', ogImage)
-
-    // JSON-LD: base graph (Organization + WebSite) + page-specific nodes
-    const graph = [
-      organizationSchema,
-      websiteSchema,
-      {
-        '@type': 'WebPage',
-        '@id': `${url}#webpage`,
-        url,
-        name: title,
-        description,
-        isPartOf: { '@id': `https://markspr.com/#website` },
-        inLanguage: 'en',
-      },
-      ...schema,
-    ]
-    const ld = { '@context': 'https://schema.org', '@graph': graph }
+    document.title = head.title
+    for (const [attr, key, content] of head.meta) {
+      if (content) upsertMeta(attr, key, content)
+      else removeMeta(attr, key)
+    }
+    upsertLink('canonical', head.canonical)
 
     // Drop the build-time static JSON-LD once the runtime graph is in place.
     document.head
@@ -101,7 +129,8 @@ export default function Seo({
       script.setAttribute('data-seo', 'jsonld')
       document.head.appendChild(script)
     }
-    script.textContent = JSON.stringify(ld)
+    script.textContent = JSON.stringify(head.jsonld)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title, description, path, keywords, noindex, type, JSON.stringify(schema)])
 
   return null
