@@ -332,10 +332,10 @@ export const clients = [
 // src/assets/media/ (e.g. times-of-india.svg). When no logo file exists the
 // name is shown as text — see src/data/mediaLogos.js.
 export const media = [
+  { name: 'Deccan Chronicle', slug: 'deccan-chronicle' },
   { name: 'The Times of India', slug: 'times-of-india' },
   { name: 'The Hindu', slug: 'the-hindu' },
   { name: 'The Indian Express', slug: 'indian-express' },
-  { name: 'Deccan Chronicle', slug: 'deccan-chronicle' },
   { name: 'Business Standard', slug: 'business-standard' },
   { name: 'The Hans India', slug: 'hans-india' },
   { name: 'Telangana Today', slug: 'telangana-today' },
@@ -345,7 +345,15 @@ export const media = [
   { name: 'Rajasthan Patrika', slug: 'rajasthan-patrika' },
   { name: 'Sakshi', slug: 'sakshi' },
   { name: 'TV5 News', slug: 'tv5-news' },
+  { name: 'V6 Velugu', slug: 'velugu' },
   { name: 'Munsif Daily', slug: 'munsif-daily' },
+  { name: 'Siasat', slug: 'siasat', invert: true },
+  { name: 'Eenadu', slug: 'eenadu' },
+  { name: 'Andhra Prabha', slug: 'andhra-prabha' },
+  { name: 'ABN Andhra Jyothi', slug: 'andhrajyothi', tall: true },
+  { name: 'TV9 Telugu', slug: 'tv9', tall: true },
+  { name: 'Hindi Milap', slug: 'hindimilap' },
+  { name: 'Namasthe Telangana', slug: 'namaste' },
   { name: 'Gujarat Today', slug: 'gujarat-today' },
   { name: 'Lokshahi', slug: 'lokshahi' },
 ]

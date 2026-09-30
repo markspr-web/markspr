@@ -412,7 +412,9 @@ function MediaStrip() {
                   <img
                     src={logo}
                     alt=""
-                    className="h-7 w-auto object-contain opacity-50 grayscale sm:h-8"
+                    className={`w-auto object-contain opacity-50 grayscale ${
+                      m.tall ? 'h-10 sm:h-12' : 'h-7 sm:h-8'
+                    } ${m.invert ? 'invert' : ''}`}
                   />
                 ) : (
                   <span className="font-display text-xl font-bold uppercase tracking-tightest text-slate/70 sm:text-2xl">
