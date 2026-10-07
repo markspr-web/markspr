@@ -246,6 +246,13 @@ export const publicRelations = {
 // chips on /events. `related` links to a service slug.
 export const events = [
   {
+    slug: 'grand-launch-of-showboat-social',
+    title: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee',
+    seoTitle: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee, Hyderabad',
+    tag: 'Event Management',
+    related: 'event-management',
+  },
+  {
     slug: 'hilife-exhibition-september-special',
     title: 'HiLife Exhibition – September Special',
     seoTitle: 'HiLife Exhibition – September Special, Hyderabad',
@@ -345,15 +352,14 @@ export const media = [
   { name: 'Rajasthan Patrika', slug: 'rajasthan-patrika' },
   { name: 'Sakshi', slug: 'sakshi' },
   { name: 'TV5 News', slug: 'tv5-news' },
-  { name: 'V6 Velugu', slug: 'velugu' },
+  {name:'Velugu',slug:'velugu'},
   { name: 'Munsif Daily', slug: 'munsif-daily' },
-  { name: 'Siasat', slug: 'siasat', invert: true },
-  { name: 'Eenadu', slug: 'eenadu' },
-  { name: 'Andhra Prabha', slug: 'andhra-prabha' },
-  { name: 'ABN Andhra Jyothi', slug: 'andhrajyothi', tall: true },
-  { name: 'TV9 Telugu', slug: 'tv9', tall: true },
-  { name: 'Hindi Milap', slug: 'hindimilap' },
-  { name: 'Namasthe Telangana', slug: 'namaste' },
+  {name:'Siasat',slug:'siasat'},
+  {name:'Eenadu',slug:'eenadu'},
+  {name:'Andhra Prabha',slug:'andhraprabha'},
+  {name:'Andhra Jyothi',slug:'andhrajythohi'},
+  {name:'Hindi Milap',slug:'hindimilap'},
+  {name:'Namaste Telanagana',slug:'namaste'},
   { name: 'Gujarat Today', slug: 'gujarat-today' },
   { name: 'Lokshahi', slug: 'lokshahi' },
 ]
