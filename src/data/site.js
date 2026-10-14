@@ -246,16 +246,16 @@ export const publicRelations = {
 // chips on /events. `related` links to a service slug.
 export const events = [
   {
-    slug: 'grand-launch-of-showboat-social',
-    title: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee',
-    seoTitle: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee, Hyderabad',
+    slug: 'hilife-exhibition-october',
+    title: 'HiLife Brides Exhibition – October',
+    seoTitle: 'HiLife Brides Exhibition – October, Hyderabad',
     tag: 'Event Management',
     related: 'event-management',
   },
   {
-    slug: 'hilife-exhibition-september-special',
-    title: 'HiLife Exhibition – September Special',
-    seoTitle: 'HiLife Exhibition – September Special, Hyderabad',
+    slug: 'grand-launch-of-showboat-social',
+    title: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee',
+    seoTitle: 'Grand Launch of Showboat Social – Pickle District × Madikeri Coffee, Hyderabad',
     tag: 'Event Management',
     related: 'event-management',
   },
