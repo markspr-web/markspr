@@ -135,7 +135,7 @@ function AboutTeaser() {
                 </Reveal>
               ))}
               <Reveal className="bg-navy p-6">
-                <p className="font-serif text-lg italic leading-snug text-white">
+                <p className="font-serif text-2xl italic leading-snug text-white lg:text-3xl xl:text-4xl">
                   “{company.tagline}.”
                 </p>
               </Reveal>

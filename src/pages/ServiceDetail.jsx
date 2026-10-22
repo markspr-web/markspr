@@ -3,10 +3,10 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Seo, { breadcrumbSchema } from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { RevealLine } from '../components/Reveal'
-import FeaturePhoto from '../components/FeaturePhoto'
+import ServiceGallery from '../components/ServiceGallery'
 import NotFound from './NotFound'
 import { services, siteUrl, company } from '../data/site'
-import { servicePhoto } from '../data/servicePhotos'
+import { servicePhoto, servicePhotos } from '../data/servicePhotos'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -16,7 +16,8 @@ export default function ServiceDetail() {
   const service = services[index]
   const prev = services[(index - 1 + services.length) % services.length]
   const next = services[(index + 1) % services.length]
-  const photo = servicePhoto(service.slug)
+  const photo = servicePhoto(service.slug) // first real photo, or null (used for JSON-LD)
+  const photos = servicePhotos(service.slug, service.title, company.name)
   const path = `/services/${service.slug}`
 
   const crumbs = [
@@ -66,24 +67,12 @@ export default function ServiceDetail() {
               </Reveal>
             </div>
             <div className="lg:col-span-9">
-              {photo && (
-                <Reveal className="mb-12">
-                  <figure className="group">
-                    <FeaturePhoto>
-                      <img
-                        src={photo}
-                        alt={`${service.title} — work by ${company.name}`}
-                        loading="lazy"
-                        decoding="async"
-                        className="max-h-[28rem] w-auto max-w-full object-contain grayscale transition duration-500 ease-out will-change-[filter] group-hover:scale-[1.025] group-hover:grayscale-0 motion-reduce:transition-none"
-                      />
-                    </FeaturePhoto>
-                    <figcaption className="mt-3 text-xs uppercase tracking-[0.16em] text-slate">
-                      {service.title} · from {company.name}’s record
-                    </figcaption>
-                  </figure>
-                </Reveal>
-              )}
+              <div className="mb-12">
+                <ServiceGallery
+                  photos={photos}
+                  caption={`${service.title} · from ${company.name}’s record`}
+                />
+              </div>
 
               <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-slate">
                 {service.body.map((p, i) => (

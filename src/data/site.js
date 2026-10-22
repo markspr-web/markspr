@@ -66,7 +66,10 @@ export const about = {
   stats: [
     { value: '40+', label: 'Years of experience' },
     { value: '1000+', label: 'Brands served in India' },
-    { value: 'Deccan', label: 'Region of India, based in Hyderabad' },
+    { value: '1,00,000+', label: 'Influencers' },
+    { value: '10,000+', label: 'Celebrities' },
+    { value: '1000+', label: 'Media House Associated' },
+
   ],
   lead:
     'Marks Media Communication is a media house that specialises in Public Relations and Advertising, based at Banjara Hills, Road No. 10, Hyderabad.',
