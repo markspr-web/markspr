@@ -250,8 +250,8 @@ export const publicRelations = {
 export const events = [
   {
     slug: 'hilife-exhibition-october',
-    title: 'HiLife Brides Exhibition – October',
-    seoTitle: 'HiLife Brides Exhibition – October, Hyderabad',
+    title: 'HiLife Exhibition – October',
+    seoTitle: 'HiLife Exhibition – October, Hyderabad',
     tag: 'Event Management',
     related: 'event-management',
   },
